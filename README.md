@@ -68,3 +68,5 @@ Command-line options allow customization of context size, CPU threads, KV cache 
 ```bash
 python3 deepseek_chat.py --help
 ```
+
+The code has been commented using Doxygen blocks for better readability/usability.
