@@ -1,14 +1,13 @@
 # DeepSeek Coder CLI
 
-A lightweight terminal-based chat interface for **DeepSeek-Coder-6.7B-Instruct** using `llama.cpp`. Supports streaming responses, multi-turn conversations, file attachments, and CPU performance benchmarking.
+A lightweight terminal chat interface for **DeepSeek-Coder-6.7B-Instruct** using `llama.cpp`. Supports streaming responses, multi-turn conversations, file attachments, and CPU performance benchmarking.
 
 ## Requirements
 
 - Python 3.10+
 - [llama.cpp](https://github.com/ggml-org/llama.cpp) (built with `llama-server` and `llama-bench`)
 - DeepSeek-Coder-6.7B-Instruct GGUF model
-
-No additional Python packages required.
+- `rich` (only for `deepseek_chat.py`; `deepseek_chat_no_style.py` needs no packages)
 
 ## Usage
 
@@ -42,10 +41,12 @@ Keep the server running:
 python3 deepseek_chat.py --serve-only
 ```
 
-What I did was to make it less wordy (.zshrc or bashrc):
+## Quick launch
+
+`ds-chat.sh` sets up a virtual environment, installs `rich` if needed, and starts the chat. Add an alias to your `.zshrc` or `.bashrc`:
 
 ```bash
-alias ds-chat='python3 deepseek_chat.py'
+alias ds-chat='~/llm/scripts/ds-chat.sh'
 ```
 
 ## Interactive Commands
@@ -69,4 +70,10 @@ Command-line options allow customization of context size, CPU threads, KV cache 
 python3 deepseek_chat.py --help
 ```
 
-The code has been commented using Doxygen blocks for better readability/usability.
+## Files
+
+- `deepseek_chat.py` - styled version (Markdown rendering via `rich`)
+- `deepseek_chat_no_style.py` - plain text version (standard library only)
+- `ds-chat.sh` - venv + launch wrapper
+
+The code is commented with Doxygen blocks.
