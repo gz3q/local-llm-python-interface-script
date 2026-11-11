@@ -43,7 +43,7 @@ python3 deepseek_chat.py --serve-only
 
 ## Quick launch
 
-`ds-chat.sh` sets up a virtual environment, installs `rich` if needed, and starts the chat. Add an alias to your `.zshrc` or `.bashrc`:
+`ds-chat.sh` sets up a virtual environment, installs `rich` if needed, and starts the chat (For this, please use deepseek_chat.py instead of deepseek_chat_no_style.py). Add an alias to your `.zshrc` or `.bashrc`:
 
 ```bash
 alias ds-chat='~/llm/scripts/ds-chat.sh'
